@@ -10,6 +10,7 @@ packages = [{include = "incolume"}]
 python = "^3.11.0"
 python-dotenv = "^0.21.1"
 dynaconf = "^3.1.11"
+openai = "^0.26.5"
 
 
 [tool.poetry.group.dev.dependencies]
