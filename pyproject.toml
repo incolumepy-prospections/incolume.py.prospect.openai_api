@@ -12,6 +12,9 @@ python-dotenv = "^0.21.1"
 dynaconf = "^3.1.11"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^4.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
