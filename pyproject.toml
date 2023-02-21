@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume-py-prospect-openai-api"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 readme = "README.md"
@@ -8,7 +8,12 @@ packages = [{include = "incolume"}]
 
 [tool.poetry.dependencies]
 python = "^3.11.0"
+python-dotenv = "^0.21.1"
+dynaconf = "^3.1.11"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core"]
