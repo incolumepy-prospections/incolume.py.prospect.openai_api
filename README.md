@@ -12,3 +12,4 @@ Tutorial OpenAI API
 
 - python-dotenv / [dynaconf](https://www.youtube.com/watch?v=I9KKoUlS55w)
 - python 3.11+
+- openai
