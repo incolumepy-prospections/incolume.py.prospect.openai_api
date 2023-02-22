@@ -1,11 +1,10 @@
 import openai
-import dotenv
 import os
 import logging
+from config import settings
 
 __author__ = "@britodfbr"  # pragma: no cover
-dotenv.load_dotenv()
-TOKEN = os.environ.get('OPENAI_KEY')
+TOKEN = settings.OPENAI_KEY
 
 logging.debug(TOKEN)
 
@@ -14,25 +13,22 @@ openai.api_key = TOKEN
 
 def get_api_response(
     prompt: str, model: str = None,
-    temperature: float = 0, max_tokens: int = 0,
+    temperature: float = 0.7, max_tokens: int = 256,
     top_p: float = 1,
     frequency_penalty: float = 0,
     presence_penalty: float = 0,
 ) -> str | None:
     text: str | None = None
     model = model or 'text-davinci-003'
-    temperature = temperature or .9
-    max_tokens = max_tokens or 150
-    presence_penalty = presence_penalty or .6
     try:
         response: dict = openai.Completion.create(
-            model=model,
-            prompt='',
-            temperature=temperature,
-            max_tokens=max_tokens,
-            top_p=top_p,
-            presence_penalty=presence_penalty,
-            frequency_penalty=frequency_penalty,
+            model="text-davinci-003",
+            prompt="",
+            temperature=0.7,
+            max_tokens=256,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
         )
     except Exception as e:
         logging.error(e)
@@ -75,4 +71,5 @@ def main():
 
 
 if __name__ == '__main__':
+    pass
     main()
